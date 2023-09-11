@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      font-family: 'Outfit', sans-serif;
+    }
+    .custom {
+      width: 350px;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .parent-container{background: hsl(212, 45%, 89%);}
+  </style>
+</head>
+<body class="parent-container flex justify-center items-center h-screen">
+<div class="bg-white shadow-xl custom  flex flex-col justify-center rounded-xl p-3">
+  <div class=" w-full ">
+  <img class="object-contain rounded-xl" src="./images/image-qr-code.png" alt="qrcode">
+  </div>
+  <div class="p-4">
+    <h3 class="font-bold text-black text-2xl mb-2 ">Improve your front-end skills by building projects</h3>
+    <p class="text-center text-gray-500 text-lg">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level.</p>
+  </div>
+</div>
+</body>
+</html>
