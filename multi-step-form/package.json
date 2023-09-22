@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html",
+    "build": "parcel build",
     "dev": "npx parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
