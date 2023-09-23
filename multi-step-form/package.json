@@ -2,10 +2,9 @@
   "name": "multi-step-form-main",
   "version": "1.0.0",
   "description": "![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html",
-    "build": "npx parcel index.html",
+    "build": "parcel build index.html",
     "dev": "npx parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
