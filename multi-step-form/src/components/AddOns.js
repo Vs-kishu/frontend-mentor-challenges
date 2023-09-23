@@ -18,10 +18,10 @@ const AddOns = () => {
   };
 
   return (
-    <div className="flex flex-col justify-around w-full">
+    <div className="flex flex-col justify-around w-full max-sm:space-y-2">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold"> Pick add-ons</h1>
-        <p className="text-Coolgray">
+        <h1 className="text-xl md:text-3xl font-semibold"> Pick add-ons</h1>
+        <p className="text-Coolgray max-sm:text-sm">
           Add-ons help enhance your gaming experience.
         </p>
       </div>
@@ -31,7 +31,7 @@ const AddOns = () => {
         ))}
       </div>
 
-      <div className="flex justify-between">
+      <div className="max-sm:absolute max-sm:bottom-3 w-full max-sm:left-0 flex justify-between">
         <span
           onClick={() => dispatch(backStep())}
           className="text-Marineblue cursor-pointer my-auto"
@@ -41,7 +41,7 @@ const AddOns = () => {
         <button
           type="button"
           onClick={handleNext}
-          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-1/4"
+          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-32 whitespace-nowrap"
         >
           Next Step
         </button>

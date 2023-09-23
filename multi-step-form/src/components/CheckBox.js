@@ -27,7 +27,7 @@ const CheckBox = ({ item }) => {
       htmlFor={type}
       className={`flex ${
         isAddOn?.type === type ? "bg-Magnolia" : ""
-      } items-center justify-between border accent-Purplishblue border-Purplishblue py-4 px-3 rounded-lg`}
+      } items-center justify-between border accent-Purplishblue border-Purplishblue sm:py-4 sm:px-3 rounded-lg`}
     >
       <input
         type="checkbox"
@@ -36,14 +36,18 @@ const CheckBox = ({ item }) => {
         id={type}
         onChange={handleChange}
       />
-      <div className="w-full pl-4">
+      <div className="w-full pl-2 sm:pl-4">
         <span>{type} </span>
         <p className="text-sm text-gray-400">{desc}</p>
       </div>
       {yearly ? (
-        <span className="text-Purplishblue font-extralight">${Yprice}/yr</span>
+        <span className="text-Purplishblue font-extralight whitespace-nowrap">
+          ${Yprice}/yr
+        </span>
       ) : (
-        <span className="text-Purplishblue font-extralight">${Mprice}/m</span>
+        <span className="text-Purplishblue font-extralight whitespace-nowrap">
+          ${Mprice}/m
+        </span>
       )}
     </label>
   );

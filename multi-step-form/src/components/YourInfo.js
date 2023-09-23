@@ -29,10 +29,10 @@ const YourInfo = () => {
   };
 
   return (
-    <div className="flex flex-col justify-around w-full">
+    <div className="flex flex-col justify-around w-full gap-3 md:gap-0">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold">Personal info</h1>
-        <p className="text-Coolgray">
+        <h1 className="text-xl md:text-3xl font-semibold">Personal info</h1>
+        <p className="text-Coolgray max-sm:text-sm">
           Please provide your name, email address, and phone number.
         </p>
       </div>
@@ -55,7 +55,7 @@ const YourInfo = () => {
           }}
         />
       </form>
-      <div className="flex justify-end">
+      <div className="max-md:absolute max-md:bottom-5 max-md:right-5 md:flex md:justify-end">
         <button
           type="button"
           onClick={handleNext}

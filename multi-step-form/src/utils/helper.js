@@ -28,7 +28,7 @@ const ValidInput = ({ props }) => {
     "Phone Number": {
       pattern: {
         value: /^[6-9]\d{9}$/,
-        message: "Please enter a valid phone number",
+        message: "Invalid phone number",
       },
       validate: (value) => {
         if (!value) {

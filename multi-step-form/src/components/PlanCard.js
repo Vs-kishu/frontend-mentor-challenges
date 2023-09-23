@@ -20,14 +20,14 @@ const PlanCard = ({ props }) => {
   return (
     <div
       onClick={handleCardClickWithDispatch}
-      className={`w-52 h-40 py-3 px-2 flex flex-col ${
+      className={`w-full sm:w-52 sm:h-40 py-3 px-2 flex flex-row sm:flex-col ${
         selectedType === type && "bg-Magnolia"
       } justify-between rounded-lg cursor-pointer border-2 border-Lightgray hover:bg-Magnolia hover:border-2`}
     >
       <div>
         <img src={img} alt="plans" />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-row sm:flex-col gap-1">
         <span className="text-Marineblue font-semibold">{type}</span>
         {!yearly && <span className="text-sm text-Coolgray">${Mprice}/m</span>}
         {yearly && <span className="text-sm text-Coolgray">${Yprice}/yr</span>}

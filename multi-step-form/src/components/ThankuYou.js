@@ -11,7 +11,7 @@ const ThankuYou = () => {
         <img src={thanku} alt="thanku" />
       </div>
       <h1>Thank you!</h1>
-      <p className="text-center text-sm text-Coolgray w-3/4">
+      <p className="text-center text-sm text-Coolgray w-full px-5 md:w-3/4">
         {" "}
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
@@ -20,7 +20,7 @@ const ThankuYou = () => {
       <button
         type="button"
         onClick={() => dispatch(resetStore())}
-        className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-1/4"
+        className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-full sm:w-40 "
       >
         Fill Again
       </button>

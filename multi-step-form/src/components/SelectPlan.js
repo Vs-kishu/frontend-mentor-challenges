@@ -28,14 +28,14 @@ export const SelectPlan = () => {
     dispatch(nextStep(3));
   };
   return (
-    <div className="flex flex-col justify-around w-full">
+    <div className="flex flex-col justify-around w-full max-md:space-y-3">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold">Select your plan</h1>
-        <p className="text-Coolgray">
+        <h1 className="text-xl sm:text-3xl font-semibold">Select your plan</h1>
+        <p className="text-Coolgray max-sm:text-sm">
           You have the option of monthly or yearly billing.
         </p>
       </div>
-      <div className="flex gap-5">
+      <div className="flex sm:flex-row flex-col gap-5">
         {cards.map((item, index) => (
           <PlanCard
             props={{
@@ -62,7 +62,7 @@ export const SelectPlan = () => {
         <button
           type="button"
           onClick={handleNext}
-          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-1/4"
+          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-32 whitespace-nowrap"
         >
           Next Step
         </button>

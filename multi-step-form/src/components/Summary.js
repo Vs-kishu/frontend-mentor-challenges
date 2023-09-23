@@ -29,22 +29,22 @@ const Summary = () => {
   };
 
   return (
-    <div className="flex flex-col justify-around w-full">
+    <div className="flex flex-col justify-around w-full max-sm: space-y-2">
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold">Finishing up</h1>
-        <p className="text-Coolgray">
+        <h1 className="text-xl sm:text-3xl font-semibold">Finishing up</h1>
+        <p className="text-Coolgray max-sm:text-xs">
           Double-check everything looks OK before confirming.
         </p>
       </div>
       <div className="bg-Magnolia">
-        <div className="flex justify-between items-center px-6  py-5">
+        <div className="flex justify-between items-center sm:px-6  py-2 sm:py-5">
           <div className="font-semibold text-Marineblue ">
-            <p className="text-lg ">
+            <p className="text-sm sm:text-lg ">
               {plan.type}
               <span>({yearly ? "Yearly" : "Monthly"})</span>
             </p>
             <span
-              className="underline text-lg font-medium text-Coolgray"
+              className="underline text-sm sm:text-lg font-medium text-Coolgray"
               onClick={() => dispatch(nextStep(2))}
             >
               change
@@ -73,22 +73,22 @@ const Summary = () => {
           ))}
         </div>
       </div>
-      <div className="flex  text-xl justify-between px-6 ">
+      <div className="flex text-sm sm:text-xl justify-between sm:px-6 ">
         <p className="text-Coolgray">
           Totalyear(per {yearly ? "Year" : "Month"})
         </p>
         {yearly ? (
-          <span className="font-bold text-Purplishblue text-2xl">
+          <span className="font-bold text-Purplishblue text-lg sm:text-2xl">
             ${totalPrice}/yr
           </span>
         ) : (
-          <span className="font-bold text-Purplishblue text-2xl">
+          <span className="font-bold text-Purplishblue text-lg sm:text-2xl">
             ${totalPrice}/mo
           </span>
         )}
       </div>
 
-      <div className="flex justify-between">
+      <div className=" flex justify-between">
         <span
           className="text-Marineblue cursor-pointer my-auto "
           onClick={() => dispatch(backStep())}
@@ -97,7 +97,7 @@ const Summary = () => {
         </span>
         <button
           onClick={handleSubmit}
-          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-1/4"
+          className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-32"
         >
           Confirm
         </button>

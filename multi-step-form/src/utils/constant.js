@@ -1,9 +1,9 @@
 import { plan1, plan2, plan3 } from "../../assets/index";
 const sideOptions = [
-  { step: "1", option: "YOUR INFO" },
-  { step: "2", option: "SELECT PLAN" },
-  { step: "3", option: "ADD-ONS" },
-  { step: "4", option: "SUMMARY" },
+  { step: 1, option: "YOUR INFO" },
+  { step: 2, option: "SELECT PLAN" },
+  { step: 3, option: "ADD-ONS" },
+  { step: 4, option: "SUMMARY" },
 ];
 
 const cards = [

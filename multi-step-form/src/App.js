@@ -12,8 +12,10 @@ const App = () => {
   return (
     <section className="flex justify-center items-center h-screen bg-Lightblue">
       <div className=" justify-between max-md:h-full w-full md:w-[850px] bg-White rounded-xl p-4 flex  ">
-        <Sidebar />
-        <div className="w-7/12 flex justify-between ">
+        <div className="z-10">
+          <Sidebar />
+        </div>
+        <div className="relative w-full z-20 rounded-xl bg-white max-md:p-4  md:w-3/5 md:flex max-md:mt-24 md:justify-between ">
           {step === 1 && <YourInfo />}
           {step === 2 && <SelectPlan />}
           {step === 3 && <AddOns />}
