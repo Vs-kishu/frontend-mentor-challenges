@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { selectPlan, timePeriod } from "../store/formSlice";
 
-const ToggleSwitch = ({ setSelectedCardIndex }) => {
+const ToggleSwitch = ({ setSelectedType }) => {
   const dispatch = useDispatch();
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleSwitch = () => {
-    setSelectedCardIndex(null);
+    setSelectedType(null);
     dispatch(timePeriod());
     dispatch(selectPlan(null));
     setIsChecked(!isChecked);

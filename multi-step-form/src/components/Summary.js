@@ -1,26 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { backStep, nextStep } from "../store/formSlice";
+import { toast } from "react-toastify";
 
 const Summary = () => {
   const dispatch = useDispatch();
   const { yearly, plan, addOns } = useSelector((store) => store.form);
-  let totalAddons = 0; // Declare totalAddons outside of the forEach loop.
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    // Declare totalAddons outside of the forEach loop.
+    let totalAddons = 0;
 
-  if (yearly) {
-    addOns.forEach((element) => {
-      totalAddons += element.Yprice; // Accumulate the Yprice values.
-    });
-    TotalPrice = totalAddons + plan.Yprice;
-  } else {
-    addOns.forEach((element) => {
-      totalAddons += element.Mprice; // Accumulate the Mprice values.
-    });
-    TotalPrice = totalAddons + plan.Mprice;
-  }
+    if (yearly) {
+      addOns.forEach((element) => {
+        totalAddons += element.Yprice; // Accumulate the Yprice values.
+      });
+      setTotalPrice(totalAddons + plan.Yprice);
+    } else {
+      addOns.forEach((element) => {
+        totalAddons += element.Mprice; // Accumulate the Mprice values.
+      });
+      setTotalPrice(totalAddons + plan.Mprice);
+    }
+  }, []);
+  const handleSubmit = () => {
+    dispatch(nextStep(5));
+    toast.success("submitted succesfully");
+  };
 
   return (
-    <div className="flex flex-col justify-around w-7/12">
+    <div className="flex flex-col justify-around w-full">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold">Finishing up</h1>
         <p className="text-Coolgray">
@@ -49,8 +58,11 @@ const Summary = () => {
         </div>
         <hr className="bg-Lightgray h-0.5 w-11/12 mx-auto" />
         <div>
-          {addOns?.map((item, index) => (
-            <div className="flex justify-between px-5 py-5  ">
+          {addOns?.map((item) => (
+            <div
+              key={`addons${item}`}
+              className="flex justify-between px-5 py-5  "
+            >
               <p className="text-Coolgray text-lg">{item?.type}</p>
               {yearly ? (
                 <span>+${item?.Yprice}/yr</span>
@@ -67,11 +79,11 @@ const Summary = () => {
         </p>
         {yearly ? (
           <span className="font-bold text-Purplishblue text-2xl">
-            ${TotalPrice}/yr
+            ${totalPrice}/yr
           </span>
         ) : (
           <span className="font-bold text-Purplishblue text-2xl">
-            ${TotalPrice}/mo
+            ${totalPrice}/mo
           </span>
         )}
       </div>
@@ -84,8 +96,7 @@ const Summary = () => {
           Go Back
         </span>
         <button
-          Confirm
-          onClick={() => dispatch(nextStep(5))}
+          onClick={handleSubmit}
           className=" bg-Marineblue text-white px-1 py-2 rounded-lg w-1/4"
         >
           Confirm

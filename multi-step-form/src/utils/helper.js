@@ -1,6 +1,9 @@
-const ValidInput = ({ props }) => {
-  const { label, register, errors } = props;
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
+const ValidInput = ({ props }) => {
+  const { label, register, errors, getValues } = props;
+  const { yourInfo } = useSelector((state) => state.form);
   const validationRules = {
     Name: {
       validate: (value) => {
@@ -41,6 +44,7 @@ const ValidInput = ({ props }) => {
       <label htmlFor="">{label}</label>
       <input
         type="text"
+        defaultValue={yourInfo?.[label] || getValues[label]}
         className={`border px-4 rounded-md py-2  border-gray-500 ${
           errors[label] && "border-red-600"
         }`}

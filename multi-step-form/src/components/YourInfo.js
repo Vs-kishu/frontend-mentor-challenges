@@ -29,7 +29,7 @@ const YourInfo = () => {
   };
 
   return (
-    <div className="flex flex-col justify-around  px-10">
+    <div className="flex flex-col justify-around w-full">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold">Personal info</h1>
         <p className="text-Coolgray">
@@ -37,9 +37,23 @@ const YourInfo = () => {
         </p>
       </div>
       <form className="flex flex-col gap-5 h-1/2 justify-center">
-        <ValidInput props={{ label: "Name", register, errors }} />
-        <ValidInput props={{ label: "Email Address", register, errors }} />
-        <ValidInput props={{ label: "Phone Number", register, errors }} />
+        <ValidInput props={{ label: "Name", register, errors, getValues }} />
+        <ValidInput
+          props={{
+            label: "Email Address",
+            register,
+            errors,
+            getValues,
+          }}
+        />
+        <ValidInput
+          props={{
+            label: "Phone Number",
+            register,
+            errors,
+            getValues,
+          }}
+        />
       </form>
       <div className="flex justify-end">
         <button

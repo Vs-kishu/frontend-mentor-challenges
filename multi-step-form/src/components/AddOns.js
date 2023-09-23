@@ -18,7 +18,7 @@ const AddOns = () => {
   };
 
   return (
-    <div className="flex flex-col justify-around w-7/12">
+    <div className="flex flex-col justify-around w-full">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold"> Pick add-ons</h1>
         <p className="text-Coolgray">

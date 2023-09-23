@@ -2,37 +2,30 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPlan } from "../store/formSlice";
 
-const PlanCard = ({
-  src,
-  type,
-  Mprice,
-  Yprice,
-  free,
-  selectedCardIndex,
-  index,
-  handleCardClick,
-}) => {
+const PlanCard = ({ props }) => {
+  const { item, index, selectedType, handleCardClick } = props;
+  const { img, Mprice, Yprice, type, free } = item;
   const dispatch = useDispatch();
   const { yearly } = useSelector((store) => store.form);
 
-  const handleCardClickWithDispatch = (index, mprice, yprice) => {
+  const handleCardClickWithDispatch = () => {
     {
       !yearly && dispatch(selectPlan({ Mprice, type }));
     }
     {
       yearly && dispatch(selectPlan({ Yprice, type, free }));
     }
-    handleCardClick(index);
+    handleCardClick(type);
   };
   return (
     <div
-      onClick={() => handleCardClickWithDispatch(index, Mprice, Yprice)}
+      onClick={handleCardClickWithDispatch}
       className={`w-52 h-40 py-3 px-2 flex flex-col ${
-        selectedCardIndex == index && "bg-Magnolia"
+        selectedType === type && "bg-Magnolia"
       } justify-between rounded-lg cursor-pointer border-2 border-Lightgray hover:bg-Magnolia hover:border-2`}
     >
       <div>
-        <img src={src} alt="plans" />
+        <img src={img} alt="plans" />
       </div>
       <div className="flex flex-col gap-1">
         <span className="text-Marineblue font-semibold">{type}</span>

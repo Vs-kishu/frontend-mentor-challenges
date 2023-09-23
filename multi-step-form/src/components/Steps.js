@@ -12,7 +12,7 @@ const Steps = ({ step, option }) => {
       >
         {step}
       </span>
-      <div>
+      <div className="md:block hidden">
         <span className="font-extralight text-sm text-Coolgray">
           STEP {step}
         </span>
