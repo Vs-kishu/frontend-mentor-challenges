@@ -41,7 +41,7 @@ const ValidInput = ({ props }) => {
 
   return (
     <div className="relative flex flex-col gap-1">
-      <label htmlFor="">{label}</label>
+      <label htmlFor={label}>{label}</label>
       <input
         type="text"
         id={label}
