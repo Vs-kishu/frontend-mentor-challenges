@@ -44,6 +44,7 @@ const ValidInput = ({ props }) => {
       <label htmlFor="">{label}</label>
       <input
         type="text"
+        id={label}
         defaultValue={yourInfo?.[label] || getValues[label]}
         className={`border px-4 rounded-md py-2  border-gray-500 ${
           errors[label] && "border-red-600"

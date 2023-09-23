@@ -6,7 +6,7 @@ import { sideOptions } from "../utils/constant";
 const Sidebar = () => {
   return (
     <div className="rounde-xl  md:flex-shrink-0 ">
-      <div className=" max-md:absolute max-md:top-0 max-md:left-0 max-md:w-full max-md:h-52 md:relative">
+      <header className=" max-md:absolute max-md:top-0 max-md:left-0 max-md:w-full max-md:h-52 md:relative">
         <img
           src={sideImg}
           className="w-full h-full object-cover "
@@ -22,7 +22,7 @@ const Sidebar = () => {
             />
           ))}
         </div>
-      </div>
+      </header>
     </div>
   );
 };
